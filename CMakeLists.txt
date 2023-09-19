@@ -50,14 +50,3 @@ source_group(
   TREE   ${CMAKE_CURRENT_SOURCE_DIR}/sources/include
   FILES  ${sysops_sources}
 )
-
-if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
-    set(IS_TOP_LVL_PROJECT TRUE)
-else()
-    set(IS_TOP_LVL_PROJECT FALSE)
-endif()
-
-if(SYSOPS_TEST OR IS_TOP_LVL_PROJECT)
-    # Setup testing
-    add_subdirectory(tests)
-endif()

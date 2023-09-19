@@ -2,9 +2,9 @@
 #define sysops_memory_ops_h
 
 #ifdef _MSC_VER
-#include "win/memory/sys_ops.h"
+#include "win/memory/ops.h"
 #else
-#include "nix/memory/sys_ops.h"
+#include "nix/memory/ops.h"
 #endif
 
 #endif /* sysops_memory_ops_h */
