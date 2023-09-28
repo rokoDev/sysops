@@ -21,10 +21,10 @@ class ops
 
     static inline void free(void *aPtr) noexcept { ::free(aPtr); }
 
-    static inline errno_t memset_s([[maybe_unused]] void *aDest,
-                                   [[maybe_unused]] rsize_t aDestsz,
-                                   [[maybe_unused]] int aCh,
-                                   [[maybe_unused]] rsize_t aCount) noexcept
+    static inline int memset_s([[maybe_unused]] void *aDest,
+                               [[maybe_unused]] std::size_t aDestsz,
+                               [[maybe_unused]] int aCh,
+                               [[maybe_unused]] std::size_t aCount) noexcept
     {
 #ifdef __STDC_LIB_EXT1__
         return ::memset_s(aDest, aDestsz, aCh, aCount);
