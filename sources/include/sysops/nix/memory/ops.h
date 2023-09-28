@@ -1,7 +1,6 @@
 #ifndef sysops_nix_memory_ops_h
 #define sysops_nix_memory_ops_h
 #define __STDC_WANT_LIB_EXT1__ 1
-
 #include <string.h>
 
 #include <cstddef>
@@ -22,10 +21,16 @@ class ops
 
     static inline void free(void *aPtr) noexcept { ::free(aPtr); }
 
-    static inline errno_t memset_s(void *aDest, rsize_t aDestsz, int aCh,
-                                   rsize_t aCount) noexcept
+    static inline errno_t memset_s([[maybe_unused]] void *aDest,
+                                   [[maybe_unused]] rsize_t aDestsz,
+                                   [[maybe_unused]] int aCh,
+                                   [[maybe_unused]] rsize_t aCount) noexcept
     {
+#ifdef __STDC_LIB_EXT1__
         return ::memset_s(aDest, aDestsz, aCh, aCount);
+#else
+        return -1;
+#endif
     }
 };
 }  // namespace memory
