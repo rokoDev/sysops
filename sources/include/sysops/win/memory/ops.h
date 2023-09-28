@@ -1,6 +1,8 @@
 #ifndef sysops_win_memory_ops_h
 #define sysops_win_memory_ops_h
 
+#include <WinBase.h>
+
 #include <cstddef>
 #include <cstdlib>
 
@@ -20,6 +22,11 @@ class ops
     static inline void aligned_free(void* aPtr) noexcept
     {
         return ::_aligned_free(aPtr);
+    }
+
+    static inline PVOID SecureZeroMemory(PVOID aPtr, SIZE_T aCnt) noexcept
+    {
+        return ::SecureZeroMemory(aPtr, aCnt);
     }
 };
 }  // namespace memory
