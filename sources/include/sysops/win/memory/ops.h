@@ -2,6 +2,8 @@
 #define sysops_win_memory_ops_h
 
 #include <windows.h>
+#undef max
+#undef min
 
 #include <cstddef>
 #include <cstdlib>
