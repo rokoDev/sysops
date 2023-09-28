@@ -2,6 +2,7 @@
 #define sysops_win_memory_ops_h
 
 #include <WinBase.h>
+#include <windows.h>
 
 #include <cstddef>
 #include <cstdlib>
