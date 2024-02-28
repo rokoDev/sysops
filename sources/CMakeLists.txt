@@ -4,8 +4,6 @@ target_sources(sysops
     include/sysops/win/memory/ops.h
     include/sysops/nix/errors/ops.h
     include/sysops/win/errors/ops.h
-
-  PUBLIC
     include/sysops/memory_ops.h
     include/sysops/errors_ops.h
     include/sysops/ops.h
